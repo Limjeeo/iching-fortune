@@ -27,7 +27,7 @@ export default function Home() {
       <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative min-h-screen flex flex-col items-center justify-center px-4">
-          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/30 to-black/30 backdrop-blur-sm"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-zinc-900/40 to-black/40 backdrop-blur-[2px]"></div>
           <div className="relative z-20 text-center max-w-4xl mx-auto">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
               寻求古老智慧的指引
@@ -39,7 +39,7 @@ export default function Home() {
               {!showInput ? (
                 <button 
                   onClick={handleStartDivination}
-                  className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300"
+                  className="bg-white text-black px-8 py-4 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300 hover:scale-105 transform"
                 >
                   开始算卦
                 </button>
@@ -53,7 +53,7 @@ export default function Home() {
         </section>
 
         {/* Features Section */}
-        <section className="relative z-20 py-16 px-4 bg-black/30 backdrop-blur-sm">
+        <section className="relative z-20 py-16 px-4 bg-black/40 backdrop-blur-sm">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
               探索智慧之道
