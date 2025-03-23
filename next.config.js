@@ -5,12 +5,11 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  trailingSlash: true,
-  assetPrefix: '/iching-fortune/',
-  distDir: 'out',
-  generateBuildId: async () => {
-    return 'build-' + Date.now()
-  },
+  reactStrictMode: true,
+  swcMinify: true,
+  experimental: {
+    appDir: true
+  }
 }
 
 module.exports = nextConfig 
