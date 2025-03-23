@@ -1,20 +1,47 @@
+'use client';
+
 import Script from 'next/script'
+import { useEffect } from 'react'
+
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+}
 
 export default function Analytics() {
+  useEffect(() => {
+    // 确保在客户端执行
+    if (typeof window !== 'undefined') {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(...args: any[]) {
+        window.dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-Linkeyyu');
+    }
+  }, []);
+
   return (
     <>
       <Script
-        src="https://www.googletagmanager.com/gtag/js?id=G-Linkeyyu"
         strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-Linkeyyu`}
       />
-      <Script id="google-analytics" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Linkeyyu');
-        `}
-      </Script>
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Linkeyyu', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
     </>
   )
 } 
