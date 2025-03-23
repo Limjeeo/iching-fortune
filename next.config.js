@@ -7,6 +7,10 @@ const nextConfig = {
   },
   trailingSlash: true,
   assetPrefix: '/iching-fortune/',
+  distDir: 'out',
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
+  },
 }
 
 module.exports = nextConfig 

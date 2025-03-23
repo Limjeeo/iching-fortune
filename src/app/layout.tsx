@@ -5,18 +5,20 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "在线算卦 - 寻求智慧的指引",
-  description: "现代化在线算卦平台，基于传统易经智慧，为您提供生活指引。",
+  title: "易经占卜",
+  description: "基于易经的智能占卜系统",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="zh">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-black min-h-screen`}>
+        {children}
+      </body>
     </html>
   );
 }
