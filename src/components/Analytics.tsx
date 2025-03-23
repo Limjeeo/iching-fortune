@@ -18,7 +18,7 @@ export default function Analytics() {
         window.dataLayer.push(arguments);
       }
       gtag('js', new Date());
-      gtag('config', 'G-Linkeyyu');
+      gtag('config', 'G-CT9DWHWHF7');
     }
   }, []);
 
@@ -26,7 +26,7 @@ export default function Analytics() {
     <>
       <Script
         strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-Linkeyyu`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-CT9DWHWHF7`}
       />
       <Script
         id="google-analytics"
@@ -36,7 +36,7 @@ export default function Analytics() {
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-Linkeyyu', {
+            gtag('config', 'G-CT9DWHWHF7', {
               page_path: window.location.pathname,
             });
           `,
